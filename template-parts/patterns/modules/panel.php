@@ -4,11 +4,11 @@
 <?php if ( ! empty( $is_nested ) ) { ?>
     <section class="panel // js-Panel <?php echo esc_attr( $panel_classes ?? '' ); ?>">
 <?php } else { ?>
-    <section class="panel // js-Panel <?php echo esc_attr( $panel_classes ?? '' ); ?>">
+    <div class="panel // js-Panel js-Panel--nested <?php echo esc_attr( $panel_classes ?? '' ); ?>">
 <?php } ?>
     <?php echo wp_kses_post( $panel_markup ?? '' ); ?>
 <?php if ( ! empty( $is_nested ) ) { ?>
-    </div>
-<?php } else { ?>
     </section>
+<?php } else { ?>
+    </div>
 <?php } ?>
