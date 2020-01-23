@@ -12,10 +12,13 @@ const NAV_ALLOWED_BLOCKS = [
 ];
 
 export default {
-	title: 'Story Panel Nav',
+	title: 'Storytime Panel Nav',
 	icon: 'sort',
 	category: 'layout',
-	example: {},
+    example: {},
+    supports: {
+        inserter: false
+    },
 	edit() {
 		return (
 			<Fragment>

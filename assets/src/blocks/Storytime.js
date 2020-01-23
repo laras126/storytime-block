@@ -11,7 +11,7 @@ const PANEL_TEMPLATE = [
 ];
 
 export default {
-	title: 'Story Panel',
+	title: 'Storytime',
 	icon: 'book',
 	category: 'layout',
 	example: {},

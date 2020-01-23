@@ -8,10 +8,12 @@ const PANEL_TEMPLATE = [
 ];
 
 export default {
-	title: 'Story Panel Content',
+	title: 'Storytime Panel',
 	icon: 'carrot',
-	category: 'layout',
-	example: {},
+    category: 'layout',
+    supports: {
+        inserter: false
+    },
 	edit() {
 		return <Fragment>
 			<InnerBlocks

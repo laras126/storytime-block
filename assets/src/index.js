@@ -7,13 +7,13 @@ import { Fragment } from '@wordpress/element';
 import { PanelBody } from '@wordpress/components';
 
 // Internal
-import PanelSettings from './blocks/StoryPanel';
-import PanelNavSettings from './blocks/StoryPanelNav';
-import PanelContentSettings from './blocks/StoryPanelContent';
+import StorytimeSettings from './blocks/Storytime';
+import StorytimePanelNavSettings from './blocks/StorytimePanelNav';
+import StorytimePanelSettings from './blocks/StorytimePanel';
 
-registerBlockType( 'storytime/panel', PanelSettings );
-registerBlockType( 'storytime/panel-nav', PanelNavSettings );
-registerBlockType( 'storytime/panel-content', PanelContentSettings );
+registerBlockType( 'storytime/storytime', StorytimeSettings );
+registerBlockType( 'storytime/panel', StorytimePanelSettings );
+registerBlockType( 'storytime/panel-nav', StorytimePanelNavSettings );
 
 // const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
 //     return ( props ) => {
