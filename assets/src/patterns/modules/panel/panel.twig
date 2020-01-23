@@ -1,0 +1,11 @@
+{% if is_nested %}
+    <section class="panel // js-Panel {{ panel_classes }}">
+{% else %}
+    <div class="panel // js-Panel js-Panel--nested {{ panel_classes }}">
+{% endif %}
+    {{ panel_markup }}
+{% if is_nested %}
+    </div>
+{% else %}
+    </section>
+{% endif %}

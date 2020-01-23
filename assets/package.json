@@ -4,26 +4,43 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "larva": "larva server --watch ./src/patterns -e twig,html,js",
-      "backstop": "backstop --config=node_modules/@penskemediacorp/backstopjs-config",
-      "prod": "larva prod-scss && larva prod-js",
-      "prod:scss": "larva prod-scss",
-      "prod:js": "larva prod-js",
-      "dev": "concurrently \"npm:dev:scss\" \"npm:dev:js\" --raw",
-      "dev:scss": "larva dev-scss",
-      "dev:js": "larva dev-js",
-      "lint": "larva lint-scss & larva lint-js",
-      "lint:scss": "larva lint-scss",
-      "lint:js": "larva lint-js ./",
-      "lint-fix": "larva lint-scss --fix && npm run lint:js --fix",
-      "lint-fix:scss": "larva lint-scss --fix",
-      "lint-fix:js": "larva lint-js --fix",
-      "write-json": "larva write-json larva && larva write-json",
-      "build-icons": "larva build-icons"
+    "larva": "larva server --watch ./larva/src/patterns -e twig,html,js",
+    "backstop": "backstop --config=node_modules/@penskemediacorp/backstopjs-config",
+    "prod": "larva prod-scss && larva prod-js",
+    "prod:scss": "larva prod-scss",
+    "prod:js": "larva prod-js",
+    "dev": "concurrently \"npm:dev:scss\" \"npm:dev:js\" --raw",
+    "dev:scss": "larva dev-scss",
+    "dev:js": "larva dev-js",
+    "lint": "larva lint-scss & larva lint-js",
+    "lint:scss": "larva lint-scss",
+    "lint:js": "larva lint-js ./",
+    "lint-fix": "larva lint-scss --fix && npm run lint:js --fix",
+    "lint-fix:scss": "larva lint-scss --fix",
+    "lint-fix:js": "larva lint-js --fix",
+    "write-json": "larva write-json",
+    "build-icons": "larva build-icons",
+    "build": "wp-scripts build",
+    "patterns": "twig-to-php-parser && larva write-json",
+
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:md": "wp-scripts lint-md",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@penskemediacorp/larva": "^8.1.0-alpha.0"
+    "@penskemediacorp/larva": "^8.1.0-alpha.0",
+    "@wordpress/blocks": "^6.10.0"
+  },
+  "devDependencies": {
+    "@wordpress/babel-preset-default": "^4.9.0",
+    "@wordpress/scripts": "^6.2.0"
   }
 }
