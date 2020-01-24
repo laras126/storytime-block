@@ -4,11 +4,10 @@ import { Fragment } from '@wordpress/element';
 const PANEL_TEMPLATE = [
 	[ 'core/heading', { placeholder: 'Panel title' } ],
 	[ 'core/paragraph', { placeholder: 'Blurb for this panel' } ],
-	// [ 'core/image' ],
 ];
 
 export default {
-	title: 'Storytime Panel',
+	title: 'Storytime Panel Content',
 	icon: 'carrot',
     category: 'layout',
     supports: {

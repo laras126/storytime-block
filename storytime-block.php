@@ -38,7 +38,7 @@ function storytime_register_block() {
 
 	wp_localize_script( 'storytime', 'modules', $localize_modules );
 
-	register_block_type( 'storytime/panel', array(
+	register_block_type( 'storytime/storytime', array(
 		'editor_script'   => 'storytime',
 		'editor_style'    => 'editor-larva',
 		'render_callback' => 'storytime_panel_render_callback'

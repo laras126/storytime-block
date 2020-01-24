@@ -1,36 +1,26 @@
 // External
 import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks } from '@wordpress/block-editor';
-import { InspectorControls } from '@wordpress/editor';
-import { createHigherOrderComponent } from '@wordpress/compose';
-import { Fragment } from '@wordpress/element';
-import { PanelBody } from '@wordpress/components';
 
 // Internal
-import StorytimeSettings from './blocks/Storytime';
-import StorytimePanelNavSettings from './blocks/StorytimePanelNav';
-import StorytimePanelSettings from './blocks/StorytimePanel';
+import * as storytime from './blocks/storytime/index';
+import * as storytimePanel from './blocks/storytime/panel';
+import * as storytimeNavigation from './blocks/storytime/panel-navigation';
+import * as storytimeContent from './blocks/storytime/panel-content';
 
-registerBlockType( 'storytime/storytime', StorytimeSettings );
-registerBlockType( 'storytime/panel', StorytimePanelSettings );
-registerBlockType( 'storytime/panel-nav', StorytimePanelNavSettings );
+const addNamespace = ( name) => 'storytime/' + name;
 
-// const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
-//     return ( props ) => {
-// 		if ( 'storytime/panel' === props.name ) {
-// 			return (
-// 				<Fragment>
-// 					<BlockEdit { ...props } />
-// 					<InspectorControls>
-// 						<PanelBody>
-// 							Heyy whassup
-// 						</PanelBody>
-// 					</InspectorControls>
-// 				</Fragment>
-// 			);
-// 		}
-		
-// 	};
-// }, "withInspectorControl" );
- 
-// wp.hooks.addFilter( 'editor.BlockEdit', 'storytime/panel', withInspectorControls );
+const blocks = [
+	storytime,
+	storytimePanel,
+	storytimeNavigation,
+	storytimeContent
+];
+
+blocks.forEach( ( { name, settings } ) => {
+
+	registerBlockType( addNamespace( name ), {
+		category: 'layout',
+		icon: 'book',
+		...settings
+	} );
+})
