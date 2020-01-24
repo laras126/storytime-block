@@ -1,4 +1,4 @@
-import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls, RichText } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
 import { Component, Fragment } from '@wordpress/element';
 
@@ -17,7 +17,8 @@ class StorytimePanel extends Component {
 	}
 
 	render() {
-		return <div>
+		return <div className={ 'lrv-u-border-a-1' }>
+			<p className={ 'lrv-u-color-brand-primary' }>storytime panel</p>
 		<InnerBlocks
 			template={ PANEL_TEMPLATE }
 			templateLock={ 'all' }

@@ -5,9 +5,6 @@ import { InnerBlocks,
 import { PanelBody } from '@wordpress/components';
 import { Fragment, Component } from '@wordpress/element';
 
-
-// Almost a copy of Buttons
-
 const NAV_TEMPLATE = [ [ 'core/button' ] ];
 
 const NAV_ALLOWED_BLOCKS = [ 'core/button' ];
@@ -25,7 +22,21 @@ class StorytimePanelNavigation extends Component {
 	}
 	render() {
 		return <Fragment>
-			<p>Panel Navigation</p>
+			<InnerBlocks
+				allowedBlocks={ NAV_ALLOWED_BLOCKS }
+				template={ NAV_TEMPLATE }
+				templateLock={ false }
+				__experimentalMoverDirection={ 'horizontal' }
+				onChange={ () => console.log( 'changed' ) }
+				renderAppender={ () => (
+					<InnerBlocks.ButtonBlockAppender />
+				) }
+			/>
+			<InspectorControls>
+				<PanelBody>
+					Story Panel Nav - buttonz?
+				</PanelBody>
+			</InspectorControls>
 		</Fragment>;
 	}
 }
