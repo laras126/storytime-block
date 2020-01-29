@@ -342,7 +342,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: 'lrv-u-border-a-1'
+        className: 'lrv-u-border-a-1 lrv-u-padding-a-1'
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", null, "storytime block"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
         allowedBlocks: ALLOWED_BLOCKS
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Main Storytime")));
@@ -373,7 +373,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var name = 'storytime';
 var settings = {
-  title: 'Storytime',
+  title: 'Storytime Panel – Nested',
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
 };
@@ -416,10 +416,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CONTENT_TEMPLATE = [['core/heading', {
-  placeholder: 'Panel Title'
+  text: 'Panel Title'
 }], ['core/paragraph', {
   placeholder: 'Some panel text for the story'
 }]];
+var ALLOWED_BLOCKS = ['core/paragraph', 'core/image', 'core/columns'];
 
 var StorytimePanelContent =
 /*#__PURE__*/
@@ -435,26 +436,10 @@ function (_Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanelContent, [{
     key: "render",
     value: function render() {
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["RichText"], {
-        value: 'hello',
-        tagName: "h4",
-        wrapperClassName: "lrv-u-font-size-13",
-        placeholder: 'title here',
-        onChange: function onChange(title) {
-          return setAttributes({
-            title: title
-          });
-        }
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["RichText"], {
-        value: 'hello',
-        tagName: "p",
-        wrapperClassName: "lrv-u-font-size-13",
-        placeholder: 'title here',
-        onChange: function onChange(title) {
-          return setAttributes({
-            title: title
-          });
-        }
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
+        template: CONTENT_TEMPLATE,
+        allowedBlocks: ALLOWED_BLOCKS,
+        templateLock: false
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Storytime Panel Content woot woot")));
     }
   }]);
@@ -694,7 +679,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: 'lrv-u-border-a-1'
+        className: 'lrv-u-border-a-1 lrv-u-padding-a-1'
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", {
         className: 'lrv-u-color-brand-primary'
       }, "storytime panel"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {

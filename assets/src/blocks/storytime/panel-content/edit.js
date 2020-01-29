@@ -3,8 +3,18 @@ import { PanelBody } from '@wordpress/components';
 import { Component, Fragment } from '@wordpress/element';
 
 const CONTENT_TEMPLATE = [
-	[ 'core/heading', { placeholder: 'Panel Title' } ],
-	[ 'core/paragraph', { placeholder: 'Some panel text for the story' } ],
+	[ 'core/heading', { 
+		text: 'Panel Title' 
+	} ],
+	[ 'core/paragraph', { 
+        placeholder: 'Some panel text for the story', 
+    } ],
+];
+
+const ALLOWED_BLOCKS = [
+    'core/paragraph',
+    'core/image',
+    'core/columns'
 ];
 
 class StorytimePanelContent extends Component {
@@ -15,26 +25,17 @@ class StorytimePanelContent extends Component {
 
 	render() {
 		return <div>
-		<RichText
-			value={ 'hello' }
-			tagName="h4"
-			wrapperClassName="lrv-u-font-size-13"
-			placeholder={ 'title here' }
-			onChange={ title => setAttributes( { title } ) }
-		/>
-		<RichText
-			value={ 'hello' }
-			tagName="p"
-			wrapperClassName="lrv-u-font-size-13"
-			placeholder={ 'title here' }
-			onChange={ title => setAttributes( { title } ) }
-		/>
-		<InspectorControls>
-			<PanelBody>
-				Storytime Panel Content woot woot
-			</PanelBody>
-		</InspectorControls>
-	</div>
+			<InnerBlocks
+				template={ CONTENT_TEMPLATE }
+				allowedBlocks= { ALLOWED_BLOCKS }
+				templateLock={ false }
+			/>
+			<InspectorControls>
+				<PanelBody>
+					Storytime Panel Content woot woot
+				</PanelBody>
+			</InspectorControls>
+		</div>
 	}
 }
 

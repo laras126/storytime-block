@@ -17,7 +17,7 @@ class StorytimePanel extends Component {
 	}
 
 	render() {
-		return <div className={ 'lrv-u-border-a-1' }>
+		return <div className={ 'lrv-u-border-a-1 lrv-u-padding-a-1' }>
 			<p className={ 'lrv-u-color-brand-primary' }>storytime panel</p>
 		<InnerBlocks
 			template={ PANEL_TEMPLATE }

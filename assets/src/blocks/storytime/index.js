@@ -4,7 +4,7 @@ import save from './save';
 const name = 'storytime';
 
 const settings = {
-	title: 'Storytime',
+	title: 'Storytime Panel – Nested',
 	edit,
 	save
 };

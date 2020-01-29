@@ -44,6 +44,12 @@ function storytime_register_block() {
 		'render_callback' => 'storytime_panel_render_callback'
 	) );
 
+	register_block_type( 'storytime/panel', array(
+		'editor_script'   => 'storytime',
+		'editor_style'    => 'editor-larva',
+		'render_callback' => 'storytime_panel_render_callback'
+	) );
+
 	function storytime_panel_render_callback( $attributes, $content ) {
         $json = file_get_contents( plugin_dir_path( __FILE__ ) . 'assets/build/json/modules/panel.prototype.json' );
 
