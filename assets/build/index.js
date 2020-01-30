@@ -289,102 +289,10 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/edit.js":
-/*!**************************************!*\
-  !*** ./src/blocks/storytime/edit.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
-
-
-
-
-
-
-
-
- // Comes from localized data
-// const panelData = JSON.parse( modules.panel );
-
-var ALLOWED_BLOCKS = ['storytime/panel'];
-
-var Storytime =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Storytime, _Component);
-
-  function Storytime() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Storytime);
-
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Storytime).apply(this, arguments));
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Storytime, [{
-    key: "render",
-    value: function render() {
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: 'lrv-u-border-a-1 lrv-u-padding-a-1'
-      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", null, "storytime block"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
-        allowedBlocks: ALLOWED_BLOCKS
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Main Storytime")));
-    }
-  }]);
-
-  return Storytime;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (Storytime);
-
-/***/ }),
-
-/***/ "./src/blocks/storytime/index.js":
-/*!***************************************!*\
-  !*** ./src/blocks/storytime/index.js ***!
-  \***************************************/
-/*! exports provided: name, settings */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/storytime/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/storytime/save.js");
-
-
-var name = 'storytime';
-var settings = {
-  title: 'Storytime Panel – Nested',
-  edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
-};
-
-
-/***/ }),
-
-/***/ "./src/blocks/storytime/panel-content/edit.js":
-/*!****************************************************!*\
-  !*** ./src/blocks/storytime/panel-content/edit.js ***!
-  \****************************************************/
+/***/ "./src/blocks/panel-content/edit.js":
+/*!******************************************!*\
+  !*** ./src/blocks/panel-content/edit.js ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -451,10 +359,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel-content/index.js":
-/*!*****************************************************!*\
-  !*** ./src/blocks/storytime/panel-content/index.js ***!
-  \*****************************************************/
+/***/ "./src/blocks/panel-content/index.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/panel-content/index.js ***!
+  \*******************************************/
 /*! exports provided: name, settings */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -462,8 +370,8 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/storytime/panel-content/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/storytime/panel-content/save.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/panel-content/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/panel-content/save.js");
 
 
 var name = 'panel-content';
@@ -479,10 +387,10 @@ var settings = {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel-content/save.js":
-/*!****************************************************!*\
-  !*** ./src/blocks/storytime/panel-content/save.js ***!
-  \****************************************************/
+/***/ "./src/blocks/panel-content/save.js":
+/*!******************************************!*\
+  !*** ./src/blocks/panel-content/save.js ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -501,10 +409,10 @@ function save(props) {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel-navigation/edit.js":
-/*!*******************************************************!*\
-  !*** ./src/blocks/storytime/panel-navigation/edit.js ***!
-  \*******************************************************/
+/***/ "./src/blocks/panel-navigation/edit.js":
+/*!*********************************************!*\
+  !*** ./src/blocks/panel-navigation/edit.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -546,9 +454,7 @@ function (_Component) {
   function StorytimePanelNavigation() {
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, StorytimePanelNavigation);
 
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(StorytimePanelNavigation).apply(this, arguments)); // this.splitBlock = this.splitBlock.bind( this )
-    // this.getTimelineicon = this.getTimelineicon.bind(this)
-    // this.toggleDisplayPostDate    = this.toggleDisplayPostDate.bind( this )
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(StorytimePanelNavigation).apply(this, arguments));
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanelNavigation, [{
@@ -558,7 +464,6 @@ function (_Component) {
         allowedBlocks: NAV_ALLOWED_BLOCKS,
         template: NAV_TEMPLATE,
         templateLock: false,
-        __experimentalMoverDirection: 'horizontal',
         onChange: function onChange() {
           return console.log('changed');
         },
@@ -576,10 +481,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel-navigation/index.js":
-/*!********************************************************!*\
-  !*** ./src/blocks/storytime/panel-navigation/index.js ***!
-  \********************************************************/
+/***/ "./src/blocks/panel-navigation/index.js":
+/*!**********************************************!*\
+  !*** ./src/blocks/panel-navigation/index.js ***!
+  \**********************************************/
 /*! exports provided: name, settings */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -587,8 +492,8 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/storytime/panel-navigation/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/storytime/panel-navigation/save.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/panel-navigation/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/panel-navigation/save.js");
 
 
 var name = 'panel-navigation';
@@ -604,10 +509,10 @@ var settings = {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel-navigation/save.js":
-/*!*******************************************************!*\
-  !*** ./src/blocks/storytime/panel-navigation/save.js ***!
-  \*******************************************************/
+/***/ "./src/blocks/panel-navigation/save.js":
+/*!*********************************************!*\
+  !*** ./src/blocks/panel-navigation/save.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -626,10 +531,10 @@ function save(props) {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel/edit.js":
-/*!********************************************!*\
-  !*** ./src/blocks/storytime/panel/edit.js ***!
-  \********************************************/
+/***/ "./src/blocks/panel-nested/edit.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/panel-nested/edit.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -651,6 +556,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../patterns/modules/panel/panel */ "./src/patterns/modules/panel/panel.js");
+
 
 
 
@@ -660,46 +567,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Comes from localized data
-// const panelData = JSON.parse( modules.panel );
 
-var PANEL_TEMPLATE = [['storytime/panel-content'], ['storytime/panel-navigation']];
+var panelData = JSON.parse(modules.panel);
+var ALLOWED_BLOCKS = ['storytime/panel'];
 
-var StorytimePanel =
+var Storytime =
 /*#__PURE__*/
 function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(StorytimePanel, _Component);
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Storytime, _Component);
 
-  function StorytimePanel() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, StorytimePanel);
+  function Storytime() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Storytime);
 
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(StorytimePanel).apply(this, arguments));
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Storytime).apply(this, arguments));
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanel, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Storytime, [{
     key: "render",
     value: function render() {
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: 'lrv-u-border-a-1 lrv-u-padding-a-1'
-      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", {
-        className: 'lrv-u-color-brand-primary'
-      }, "storytime panel"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
-        template: PANEL_TEMPLATE,
-        templateLock: 'all'
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Storytime Panel - ID here!")));
+      panelData.panel_markup = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
+        allowedBlocks: ALLOWED_BLOCKS
+      });
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__["default"], panelData), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Main Storytime")));
     }
   }]);
 
-  return StorytimePanel;
+  return Storytime;
 }(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (StorytimePanel);
+/* harmony default export */ __webpack_exports__["default"] = (Storytime);
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel/index.js":
-/*!*********************************************!*\
-  !*** ./src/blocks/storytime/panel/index.js ***!
-  \*********************************************/
+/***/ "./src/blocks/panel-nested/index.js":
+/*!******************************************!*\
+  !*** ./src/blocks/panel-nested/index.js ***!
+  \******************************************/
 /*! exports provided: name, settings */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -707,13 +610,13 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/storytime/panel/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/storytime/panel/save.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/panel-nested/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/panel-nested/save.js");
 
 
-var name = 'panel';
+var name = 'storytime';
 var settings = {
-  title: 'Storytime Panel',
+  title: 'Storytime Panel – Nested',
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
 };
@@ -721,10 +624,10 @@ var settings = {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/panel/save.js":
-/*!********************************************!*\
-  !*** ./src/blocks/storytime/panel/save.js ***!
-  \********************************************/
+/***/ "./src/blocks/panel-nested/save.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/panel-nested/save.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -743,10 +646,103 @@ function save(props) {
 
 /***/ }),
 
-/***/ "./src/blocks/storytime/save.js":
-/*!**************************************!*\
-  !*** ./src/blocks/storytime/save.js ***!
-  \**************************************/
+/***/ "./src/blocks/panel/edit.js":
+/*!**********************************!*\
+  !*** ./src/blocks/panel/edit.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../patterns/modules/panel/panel */ "./src/patterns/modules/panel/panel.js");
+
+
+
+
+
+
+
+
+
+
+var panelData = JSON.parse(modules.panel);
+var PANEL_TEMPLATE = [['storytime/panel-content'], ['storytime/panel-navigation']];
+
+var StorytimePanel =
+/*#__PURE__*/
+function (_Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(StorytimePanel, _Component);
+
+  function StorytimePanel() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, StorytimePanel);
+
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(StorytimePanel).apply(this, arguments));
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanel, [{
+    key: "render",
+    value: function render() {
+      panelData.panel_markup = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
+        template: PANEL_TEMPLATE,
+        templateLock: 'all'
+      });
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__["default"], panelData), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Storytime Panel - ID here!")));
+    }
+  }]);
+
+  return StorytimePanel;
+}(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (StorytimePanel);
+
+/***/ }),
+
+/***/ "./src/blocks/panel/index.js":
+/*!***********************************!*\
+  !*** ./src/blocks/panel/index.js ***!
+  \***********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/panel/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/panel/save.js");
+
+
+var name = 'panel';
+var settings = {
+  title: 'Storytime Panel',
+  edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
+};
+
+
+/***/ }),
+
+/***/ "./src/blocks/panel/save.js":
+/*!**********************************!*\
+  !*** ./src/blocks/panel/save.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -778,10 +774,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _blocks_storytime_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/storytime/index */ "./src/blocks/storytime/index.js");
-/* harmony import */ var _blocks_storytime_panel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/storytime/panel */ "./src/blocks/storytime/panel/index.js");
-/* harmony import */ var _blocks_storytime_panel_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/storytime/panel-navigation */ "./src/blocks/storytime/panel-navigation/index.js");
-/* harmony import */ var _blocks_storytime_panel_content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/storytime/panel-content */ "./src/blocks/storytime/panel-content/index.js");
+/* harmony import */ var _blocks_panel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/panel */ "./src/blocks/panel/index.js");
+/* harmony import */ var _blocks_panel_nested__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/panel-nested */ "./src/blocks/panel-nested/index.js");
+/* harmony import */ var _blocks_panel_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/panel-navigation */ "./src/blocks/panel-navigation/index.js");
+/* harmony import */ var _blocks_panel_content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/panel-content */ "./src/blocks/panel-content/index.js");
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -800,7 +796,7 @@ var addNamespace = function addNamespace(name) {
   return 'storytime/' + name;
 };
 
-var blocks = [_blocks_storytime_index__WEBPACK_IMPORTED_MODULE_2__, _blocks_storytime_panel__WEBPACK_IMPORTED_MODULE_3__, _blocks_storytime_panel_navigation__WEBPACK_IMPORTED_MODULE_4__, _blocks_storytime_panel_content__WEBPACK_IMPORTED_MODULE_5__];
+var blocks = [_blocks_panel_nested__WEBPACK_IMPORTED_MODULE_3__, _blocks_panel__WEBPACK_IMPORTED_MODULE_2__, _blocks_panel_navigation__WEBPACK_IMPORTED_MODULE_4__, _blocks_panel_content__WEBPACK_IMPORTED_MODULE_5__];
 blocks.forEach(function (_ref) {
   var name = _ref.name,
       settings = _ref.settings;
@@ -809,6 +805,27 @@ blocks.forEach(function (_ref) {
     icon: 'book'
   }, settings));
 });
+
+/***/ }),
+
+/***/ "./src/patterns/modules/panel/panel.js":
+/*!*********************************************!*\
+  !*** ./src/patterns/modules/panel/panel.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Panel; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+function Panel(props) {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+    className: 'panel // js-Panel ' + props.panel_classes
+  }, props.panel_markup);
+}
 
 /***/ }),
 

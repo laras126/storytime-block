@@ -3,7 +3,7 @@
 {% else %}
     <div class="panel // js-Panel js-Panel--nested {{ panel_classes }}">
 {% endif %}
-    {{ panel_markup }}
+    {{ panel_markup|raw }}
 {% if is_nested %}
     </section>
 {% else %}

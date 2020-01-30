@@ -2,10 +2,10 @@
 import { registerBlockType } from '@wordpress/blocks';
 
 // Internal
-import * as storytime from './blocks/storytime/index';
-import * as storytimePanel from './blocks/storytime/panel';
-import * as storytimeNavigation from './blocks/storytime/panel-navigation';
-import * as storytimeContent from './blocks/storytime/panel-content';
+import * as storytimePanel from './blocks/panel';
+import * as storytime from './blocks/panel-nested';
+import * as storytimeNavigation from './blocks/panel-navigation';
+import * as storytimeContent from './blocks/panel-content';
 
 const addNamespace = ( name) => 'storytime/' + name;
 
