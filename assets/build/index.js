@@ -442,6 +442,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // The idea here is to use the Gutenberg UI to collect data to send to
+// a pattern object for the front-end rather than sending markup.
+// Not there quite yet.
 
 var button = ['core/button', {
   text: 'Next Panel',
@@ -472,7 +475,7 @@ function (_Component) {
         renderAppender: function renderAppender() {
           return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"].ButtonBlockAppender, null);
         }
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Story Panel Nav - buttonz?")));
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Story Panel Navigation.")));
     }
   }]);
 
@@ -521,11 +524,12 @@ var settings = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-
+// TODO:
+// will save as attributes in
+// the panel and panel nested blocks
+// so it can be plugged into LRVA pattern
 function save(props) {
-  return props;
+  return null;
 }
 
 /***/ }),
@@ -585,56 +589,12 @@ function (_Component) {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanelNested, [{
-    key: "getChildPanelIds",
-    value: function getChildPanelIds() {
-      // let panels = [];
-      // select( 'core/block-editor' ).getBlocks()
-      // 	.filter( block => {
-      // 		if ( 'storytime/panel-nested' !== block.name ) {
-      // 			return false;
-      // 		}
-      // 		return true;
-      // 	}).map( ( block ) => {
-      // 		block.innerBlocks.map( block => panels.push( block.clientId ) );
-      // 	});
-      // return panels;
-      withSelect(function (select, blockData) {
-        return {
-          innerBlocks: select('core/editor').getBlocks(blockData.clientId)
-        };
-      })(function (_ref) {
-        var innerBlocks = _ref.innerBlocks,
-            className = _ref.className;
-        console.log('inner blocks content', innerBlocks);
-        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-          className: className
-        }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
-          template: TEMPLATE
-        }));
-      });
-    }
-  }, {
-    key: "getPreviousBlockClientId",
-    value: function getPreviousBlockClientId() {
-      return Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_9__["select"])('core/block-editor').getPreviousBlockClientId();
-    }
-  }, {
     key: "render",
     value: function render() {
       panelData.panel_markup = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
         allowedBlocks: ALLOWED_BLOCKS
       });
-      console.log(this.getChildPanelIds());
-      console.log(this.getPreviousBlockClientId());
-      this.props.attributes.childPanelIds = this.getChildPanelIds();
-      console.log(this.props.attributes);
-      var prevBlock = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_9__["select"])('core/block-editor').getBlock(this.getPreviousBlockClientId());
-
-      if (null !== prevBlock && 'storytime/panel' === prevBlock.name) {
-        console.log('panel block previous');
-      }
-
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__["default"], panelData), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Main Storytime")));
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__["default"], panelData), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Group of Nested Panels.")));
     }
   }]);
 
@@ -741,7 +701,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var panelData = JSON.parse(modules.panel);
-var PANEL_TEMPLATE = [['storytime/panel-content'], ['storytime/panel-navigation']];
+var PANEL_TEMPLATE = [['storytime/panel-content'], ['storytime/panel-navigation']]; // All these could be conslidated into a PanelDetails Component
+// and maybe should be renamed to StoryPanel so that they aren't
+// confused with the PanelInspector
+
+var PanelId = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_9__["withSelect"])(function (select) {
+  return {
+    id: select('core/editor').getSelectedBlock().clientId
+  };
+})(function (_ref) {
+  var id = _ref.id;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("strong", null, "Current Panel ID:"), " ", id);
+});
+var NextPanelId = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_9__["withSelect"])(function (select) {
+  return {
+    id: select('core/editor').getAdjacentBlockClientId()
+  };
+})(function (_ref2) {
+  var id = _ref2.id;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("strong", null, id ? "Next Panel ID: " : "Last Panel in set."), id);
+});
+var IsNestedPanel = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_9__["withSelect"])(function (select) {
+  var id = select('core/editor').getSelectedBlock().clientId;
+  var parentId = select('core/editor').getBlockHierarchyRootClientId(id);
+  var parentBlock = select('core/editor').getBlock(parentId);
+  return parentBlock;
+})(function (block) {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("p", null, 'storytime/panel-nested' === block.name ? 'Nested Panel' : 'Single Panel');
+});
 
 var StorytimePanel =
 /*#__PURE__*/
@@ -755,25 +742,14 @@ function (_Component) {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanel, [{
-    key: "getStuff",
-    value: function getStuff() {}
-  }, {
     key: "render",
-    value: function render(props) {
-      // Controller key/value code
+    value: function render() {
+      // Send markup to the pattern object
       panelData.panel_markup = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
         template: PANEL_TEMPLATE,
         templateLock: 'all'
       });
-      wp.data.select('core/block-editor').getBlocks().map(function (block) {// switch( block.name ) {
-        // 	case 'storytime/panel':
-        // 		console.log( block.name );
-        // 		console.log( block.innerBlocks );
-        // 		break;
-        // }
-      }); // End
-
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__["default"], panelData), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Storytime Panel - ID here!")));
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_patterns_modules_panel_panel__WEBPACK_IMPORTED_MODULE_8__["default"], panelData), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(IsNestedPanel, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(PanelId, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(NextPanelId, null))));
     }
   }]);
 
@@ -801,6 +777,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var name = 'panel';
 var settings = {
+  attributes: {
+    // Maybe button data will be collected here.
+    buttons: {
+      type: 'array',
+      default: []
+    }
+  },
   title: 'Storytime Panel',
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
