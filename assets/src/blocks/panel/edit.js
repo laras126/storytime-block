@@ -2,6 +2,7 @@ import { InnerBlocks, InspectorControls, RichText } from '@wordpress/block-edito
 import { PanelBody } from '@wordpress/components';
 import { Component, Fragment } from '@wordpress/element';
 import Panel from '../../patterns/modules/panel/panel';
+import { withDispatch, useDispatch, useSelect } from '@wordpress/data';
 
 const panelData = JSON.parse( modules.panel );
 
@@ -15,12 +16,25 @@ class StorytimePanel extends Component {
 	constructor() {
 		super( ...arguments )
 	}
+	getStuff() {
 
-	render() {
+	}
+	render( props ) {
+
+		// Controller key/value code
 		panelData.panel_markup = <InnerBlocks
 			template={ PANEL_TEMPLATE }
 			templateLock={ 'all' }
 		/>;
+
+		wp.data.select( 'core/block-editor' ).getBlocks().map( ( block ) => {
+			// switch( block.name ) {
+			// 	case 'storytime/panel':
+			// 		console.log( block.name );
+			// 		console.log( block.innerBlocks );
+			// 		break;
+			// }
+		});// End
 
 		return <Fragment>
 			<Panel { ... panelData } />
