@@ -10,7 +10,8 @@ import Panel from '../../patterns/modules/panel/panel';
 
 import {
 	select,
-	withSelect
+	withSelect,
+	useSelect
 } from '@wordpress/data';
 
 const panelData = JSON.parse( modules.panel );
@@ -59,35 +60,56 @@ class StorytimePanel extends Component {
 
 	}
 
+	getNextPanelId() {
+		// Get the id of the next panel in here doi
+		return '12378462834623';
+	}
+
 	render() {
+
+		/**
+		 * Need to create buttons obj based on:
+		 *
+		 * if next panel is a nested panel,
+		 * 	get the each nested panel and generate a button for each
+		 * else it is a single panel
+		 * 	generate a button for the single panel
+		 *
+		 **/
 
 		const buttons = [
 			{
 				text: 'Button 1',
-				id: 'idyeah'
+				id: 'idyeah',
+				rel: 'whereToGo'
 			},
 			{
 				text: 'Button 2',
-				id: 'idyeah'
+				id: 'idyeah',
+				rel: 'whereToGo'
 			},
 			{
 				text: 'Button 3',
-				id: 'idyeah'
+				id: 'idyeah',
+				rel: 'whereToGo'
 			}
-		]
+		];
+
 		// This code is essentially redundant to what is in PHP.
 		const button_struct = panelData.panel_buttons[0];
 		panelData.panel_buttons = [];
 
-		// get all buttons from panel state or something
-
+		// get all buttons from panel state or attributes or w/e
 		buttons.map( ( button ) => {
 			// could we import / use the larva prototype JS here somehow?
 			let new_button = Object.assign( {}, button_struct ); // need clonedeep
+
+			new_button.c_button_href = '#' + this.getNextPanelId();
 			new_button.c_button_text = <RichText
 					value={ button.text }
 					onChange={ this.updatePanelAttributes }
 				/>;
+
 			panelData.panel_buttons.push( new_button );
 		});
 
