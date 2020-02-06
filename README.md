@@ -2,11 +2,18 @@
 
 With Larva experiments. There are two build steps – larva scripts for front-end assets, and wp scripts for block JS.
 
-To start developing UI:
+To develop, run all commands from `assets`:
 
-1. Run `npm install` from assets.
-2. Run `npm run larva` to open the Larva server.
-3. In a new command window, run `npm run dev` to start the watch task for JS and SCSS compilation.
+Start with `npm install`.
+
+To develop front-end UI:
+
+1. Run `npm run larva` to open the Larva server.
+2. In a new command window, run `npm run dev` to start the watch task for JS and SCSS compilation.
+
+To develop blocks:
+
+1. Run `npm run start`
 
 ## Asset Building
 
