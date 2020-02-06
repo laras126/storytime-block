@@ -1,11 +1,17 @@
-import { InnerBlocks, 
+import {
+	InnerBlocks,
 	InspectorControls,
  } from '@wordpress/block-editor';
+
 import { PanelBody } from '@wordpress/components';
 import { Fragment, Component } from '@wordpress/element';
 
-const button = [ 
-	'core/button', 
+// The idea here is to use the Gutenberg UI to collect data to send to
+// a pattern object for the front-end rather than sending markup.
+// Not there quite yet.
+
+const button = [
+	'core/button',
 	{
 		text: 'Next Panel',
 		url: '#',
@@ -33,7 +39,7 @@ class StorytimePanelNavigation extends Component {
 			/>
 			<InspectorControls>
 				<PanelBody>
-					Story Panel Nav - buttonz?
+					Story Panel Navigation.
 				</PanelBody>
 			</InspectorControls>
 		</Fragment>;

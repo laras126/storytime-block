@@ -1,8 +1,16 @@
-import { InnerBlocks, InspectorControls, RichText } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	InspectorControls,
+	RichText
+} from '@wordpress/block-editor';
+
 import { PanelBody } from '@wordpress/components';
 import { Component, Fragment } from '@wordpress/element';
 import Panel from '../../patterns/modules/panel/panel';
-import { withDispatch, useDispatch, useSelect } from '@wordpress/data';
+
+import {
+	withSelect
+} from '@wordpress/data';
 
 const panelData = JSON.parse( modules.panel );
 
@@ -11,36 +19,57 @@ const PANEL_TEMPLATE = [
 	[ 'storytime/panel-navigation' ],
 ];
 
+// All these could be conslidated into a PanelDetails Component
+// and maybe should be renamed to StoryPanel so that they aren't
+// confused with the PanelInspector
+const PanelId = withSelect( ( select ) => {
+	return {
+		id: select( 'core/editor' ).getSelectedBlock().clientId
+	};
+} )( ( { id } ) => {
+	return <p><strong>Current Panel ID:</strong> { id }</p>;
+} );
+
+const NextPanelId = withSelect( ( select ) => {
+	return {
+		id: select( 'core/editor' ).getAdjacentBlockClientId()
+	};
+} )( ( { id } ) => {
+	return <p><strong>{ id ? "Next Panel ID: " : "Last Panel in set." }</strong>{ id }</p>;
+} );
+
+const IsNestedPanel = withSelect( ( select ) => {
+	const id = select( 'core/editor' ).getSelectedBlock().clientId;
+	const parentId = select( 'core/editor' ).getBlockHierarchyRootClientId( id );
+	const parentBlock = select( 'core/editor' ).getBlock( parentId );
+
+	return parentBlock;
+} )( ( block ) => {
+	return <p>{ ( 'storytime/panel-nested' === block.name ) ? 'Nested Panel' : 'Single Panel' }</p>;
+
+} );
+
 class StorytimePanel extends Component {
 
 	constructor() {
 		super( ...arguments )
 	}
-	getStuff() {
 
-	}
-	render( props ) {
+	render() {
 
-		// Controller key/value code
+		// Send markup to the pattern object
 		panelData.panel_markup = <InnerBlocks
 			template={ PANEL_TEMPLATE }
 			templateLock={ 'all' }
 		/>;
 
-		wp.data.select( 'core/block-editor' ).getBlocks().map( ( block ) => {
-			// switch( block.name ) {
-			// 	case 'storytime/panel':
-			// 		console.log( block.name );
-			// 		console.log( block.innerBlocks );
-			// 		break;
-			// }
-		});// End
-
 		return <Fragment>
 			<Panel { ... panelData } />
 			<InspectorControls>
 				<PanelBody>
-					Storytime Panel - ID here!
+					<IsNestedPanel />
+					<PanelId />
+					<NextPanelId />
 				</PanelBody>
 			</InspectorControls>
 		</Fragment>
