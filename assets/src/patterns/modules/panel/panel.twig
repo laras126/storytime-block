@@ -1,11 +1,19 @@
 {% if is_nested %}
-    <section class="panel // js-Panel {{ panel_classes }}">
+	<section class="panel // js-Panel {{ panel_classes }}">
 {% else %}
-    <div class="panel // js-Panel js-Panel--nested {{ panel_classes }}">
+	<div class="panel // js-Panel js-Panel--nested {{ panel_classes }}">
 {% endif %}
-    {{ panel_markup|raw }}
+
+	{{ panel_markup|raw }}
+
+	<nav class="js-Panel-nav">
+		{% for item in panel_buttons %}
+			{% include "@larva/components/c-button/c-button.twig" with item %}
+		{% endfor %}
+	</nav>
+
 {% if is_nested %}
-    </section>
+	</section>
 {% else %}
-    </div>
+	</div>
 {% endif %}
