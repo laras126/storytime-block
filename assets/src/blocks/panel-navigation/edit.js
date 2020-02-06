@@ -3,8 +3,12 @@ import {
 	InspectorControls,
  } from '@wordpress/block-editor';
 
+import {
+	Fragment,
+	Component
+} from '@wordpress/element';
+
 import { PanelBody } from '@wordpress/components';
-import { Fragment, Component } from '@wordpress/element';
 
 // The idea here is to use the Gutenberg UI to collect data to send to
 // a pattern object for the front-end rather than sending markup.
