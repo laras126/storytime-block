@@ -4,10 +4,17 @@ import { InnerBlocks,
 import { PanelBody } from '@wordpress/components';
 import { Fragment, Component } from '@wordpress/element';
 
-const NAV_TEMPLATE = [ [ 'core/button' ] ];
+const button = [ 
+	'core/button', 
+	{
+		text: 'Next Panel',
+		url: '#',
+		className: 'js-Panel-nav'
+	}
+];
 
+const NAV_TEMPLATE = [ button ];
 const NAV_ALLOWED_BLOCKS = [ 'core/button' ];
-
 class StorytimePanelNavigation extends Component {
 
 	constructor() {
@@ -20,7 +27,6 @@ class StorytimePanelNavigation extends Component {
 				allowedBlocks={ NAV_ALLOWED_BLOCKS }
 				template={ NAV_TEMPLATE }
 				templateLock={ false }
-				onChange={ () => console.log( 'changed' ) }
 				renderAppender={ () => (
 					<InnerBlocks.ButtonBlockAppender />
 				) }
