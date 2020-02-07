@@ -409,131 +409,6 @@ function save(props) {
 
 /***/ }),
 
-/***/ "./src/blocks/panel-navigation/edit.js":
-/*!*********************************************!*\
-  !*** ./src/blocks/panel-navigation/edit.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
-
-
-
-
-
-
-
-
- // The idea here is to use the Gutenberg UI to collect data to send to
-// a pattern object for the front-end rather than sending markup.
-// Not there quite yet.
-
-var button = ['core/button', {
-  text: 'Next Panel',
-  url: '#',
-  className: 'js-Panel-nav'
-}];
-var NAV_TEMPLATE = [button];
-var NAV_ALLOWED_BLOCKS = ['core/button'];
-
-var StorytimePanelNavigation =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(StorytimePanelNavigation, _Component);
-
-  function StorytimePanelNavigation() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, StorytimePanelNavigation);
-
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(StorytimePanelNavigation).apply(this, arguments));
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanelNavigation, [{
-    key: "render",
-    value: function render() {
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
-        allowedBlocks: NAV_ALLOWED_BLOCKS,
-        template: NAV_TEMPLATE,
-        templateLock: false,
-        renderAppender: function renderAppender() {
-          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"].ButtonBlockAppender, null);
-        }
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__["PanelBody"], null, "Story Panel Navigation.")));
-    }
-  }]);
-
-  return StorytimePanelNavigation;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (StorytimePanelNavigation);
-
-/***/ }),
-
-/***/ "./src/blocks/panel-navigation/index.js":
-/*!**********************************************!*\
-  !*** ./src/blocks/panel-navigation/index.js ***!
-  \**********************************************/
-/*! exports provided: name, settings */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/panel-navigation/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/panel-navigation/save.js");
-
-
-var name = 'panel-navigation';
-var settings = {
-  title: 'Storytime Panel Navigation',
-  supports: {
-    inserter: false
-  },
-  edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
-};
-
-
-/***/ }),
-
-/***/ "./src/blocks/panel-navigation/save.js":
-/*!*********************************************!*\
-  !*** ./src/blocks/panel-navigation/save.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
-// TODO:
-// will save as attributes in
-// the panel and panel nested blocks
-// so it can be plugged into LRVA pattern
-function save(props) {
-  return null;
-}
-
-/***/ }),
-
 /***/ "./src/blocks/panel-nested/edit.js":
 /*!*****************************************!*\
   !*** ./src/blocks/panel-nested/edit.js ***!
@@ -591,6 +466,8 @@ function (_Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanelNested, [{
     key: "render",
     value: function render() {
+      // No buttons in the panel group
+      panelData.panel_buttons = [];
       panelData.panel_markup = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
         allowedBlocks: ALLOWED_BLOCKS
       });
@@ -625,13 +502,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var name = 'panel-nested';
 var settings = {
-  attributes: {
-    childPanelIds: {
-      type: 'array',
-      default: []
-    }
-  },
-  title: 'Storytime Panel – Nested',
+  title: 'Storytime Panel Group',
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_2__["default"]
 };
@@ -701,7 +572,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var panelData = JSON.parse(modules.panel);
-var PANEL_TEMPLATE = [['storytime/panel-content'], ['storytime/panel-navigation']]; // All these could be conslidated into a PanelDetails Component
+var PANEL_TEMPLATE = [['storytime/panel-content']]; // All these could be conslidated into a PanelDetails Component
 // and maybe should be renamed to StoryPanel so that they aren't
 // confused with the PanelInspector
 
@@ -742,9 +613,60 @@ function (_Component) {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(StorytimePanel, [{
+    key: "getNextPanelId",
+    value: function getNextPanelId() {
+      // Get the id of the next panel in here doi
+      return '12378462834623';
+    }
+  }, {
     key: "render",
     value: function render() {
+      /**
+       * Need to create buttons obj based on:
+       *
+       * if next panel is a nested panel,
+       * 	get the each nested panel and generate a button for each
+       * else it is a single panel
+       * 	generate a button for the single panel
+       *
+       **/
+      var _this$props = this.props,
+          attributes = _this$props.attributes,
+          setAttributes = _this$props.setAttributes; // This code is essentially redundant to what is in PHP.
+
+      var button_struct = panelData.panel_buttons[0];
+      panelData.panel_buttons = []; // testing with single button for now
+
+      var button_data = this.props.attributes.button;
+      var new_button = Object.assign({}, button_struct); // need clonedeep
+
+      new_button.c_button_href = '#' + this.getNextPanelId();
+      new_button.c_button_text = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["RichText"], {
+        value: button_data.text,
+        onChange: function onChange(content) {
+          return setAttributes({
+            button: {
+              text: content,
+              id: 'whatever',
+              rel: 'cool'
+            }
+          });
+        }
+      });
+      console.log(attributes);
+      panelData.panel_buttons.push(new_button); // get all buttons from panel state or attributes or w/e
+      // this.props.attributes.buttons.map( ( button ) => {
+      // 	// could we import / use the larva prototype JS here somehow?
+      // let new_button = Object.assign( {}, button_struct ); // need clonedeep
+      // new_button.c_button_href = '#' + this.getNextPanelId();
+      // new_button.c_button_text = <RichText
+      // 		value={ button.text }
+      // 		onChange={ this.updateButtons }
+      // 	/>;
+      // panelData.panel_buttons.push( new_button );
+      // });
       // Send markup to the pattern object
+
       panelData.panel_markup = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], {
         template: PANEL_TEMPLATE,
         templateLock: 'all'
@@ -778,10 +700,32 @@ __webpack_require__.r(__webpack_exports__);
 var name = 'panel';
 var settings = {
   attributes: {
-    // Maybe button data will be collected here.
-    buttons: {
-      type: 'array',
-      default: []
+    button: {
+      type: 'object',
+      // source: 'query',
+      // selector: '.c-button',
+      // query: {
+      // 	text: {
+      // 		type: 'string',
+      // 		source: 'html',
+      // 		selector: 'button'
+      // 	},
+      // 	id: {
+      // 		type: 'string',
+      // 		source: 'attribute',
+      // 		attribute: 'id',
+      // 	},
+      // 	rel: {
+      // 		type: 'string',
+      // 		source: 'attribute',
+      // 		attribute: 'rel',
+      // 	},
+      // },
+      default: {
+        text: 'Button boo boo',
+        id: 'idyeah',
+        rel: 'whereToGo'
+      }
     }
   },
   title: 'Storytime Panel',
@@ -829,8 +773,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _blocks_panel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/panel */ "./src/blocks/panel/index.js");
 /* harmony import */ var _blocks_panel_nested__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/panel-nested */ "./src/blocks/panel-nested/index.js");
-/* harmony import */ var _blocks_panel_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/panel-navigation */ "./src/blocks/panel-navigation/index.js");
-/* harmony import */ var _blocks_panel_content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/panel-content */ "./src/blocks/panel-content/index.js");
+/* harmony import */ var _blocks_panel_content__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/panel-content */ "./src/blocks/panel-content/index.js");
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -844,12 +787,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-
 var addNamespace = function addNamespace(name) {
   return 'storytime/' + name;
 };
 
-var blocks = [_blocks_panel__WEBPACK_IMPORTED_MODULE_2__, _blocks_panel_nested__WEBPACK_IMPORTED_MODULE_3__, _blocks_panel_navigation__WEBPACK_IMPORTED_MODULE_4__, _blocks_panel_content__WEBPACK_IMPORTED_MODULE_5__];
+var blocks = [_blocks_panel__WEBPACK_IMPORTED_MODULE_2__, _blocks_panel_nested__WEBPACK_IMPORTED_MODULE_3__, _blocks_panel_content__WEBPACK_IMPORTED_MODULE_4__];
 blocks.forEach(function (_ref) {
   var name = _ref.name,
       settings = _ref.settings;
@@ -875,8 +817,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 function cButton(props) {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: props.c_button_classes
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+    className: 'c-button ' + props.c_button_classes
   }, props.c_button_text);
 }
 
