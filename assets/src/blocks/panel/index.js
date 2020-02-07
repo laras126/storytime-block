@@ -5,10 +5,32 @@ const name = 'panel';
 
 const settings = {
 	attributes: {
-		// Maybe button data will be collected here.
-		buttons: {
-			type: 'array',
-			default: []
+		button: {
+			type: 'object',
+			// source: 'query',
+			// selector: '.c-button',
+			// query: {
+			// 	text: {
+			// 		type: 'string',
+			// 		source: 'html',
+			// 		selector: 'button'
+			// 	},
+			// 	id: {
+			// 		type: 'string',
+			// 		source: 'attribute',
+			// 		attribute: 'id',
+			// 	},
+			// 	rel: {
+			// 		type: 'string',
+			// 		source: 'attribute',
+			// 		attribute: 'rel',
+			// 	},
+			// },
+			default: {
+				text: 'Button boo boo',
+				id: 'idyeah',
+				rel: 'whereToGo'
+			}
 		}
 	},
 	title: 'Storytime Panel',

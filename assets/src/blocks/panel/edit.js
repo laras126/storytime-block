@@ -9,14 +9,15 @@ import { Component, Fragment } from '@wordpress/element';
 import Panel from '../../patterns/modules/panel/panel';
 
 import {
-	withSelect
+	select,
+	withSelect,
+	useSelect
 } from '@wordpress/data';
 
 const panelData = JSON.parse( modules.panel );
 
 const PANEL_TEMPLATE = [
-	[ 'storytime/panel-content' ],
-	[ 'storytime/panel-navigation' ],
+	[ 'storytime/panel-content' ]
 ];
 
 // All these could be conslidated into a PanelDetails Component
@@ -55,7 +56,56 @@ class StorytimePanel extends Component {
 		super( ...arguments )
 	}
 
+	getNextPanelId() {
+		// Get the id of the next panel in here doi
+		return '12378462834623';
+	}
+
 	render() {
+
+		/**
+		 * Need to create buttons obj based on:
+		 *
+		 * if next panel is a nested panel,
+		 * 	get the each nested panel and generate a button for each
+		 * else it is a single panel
+		 * 	generate a button for the single panel
+		 *
+		 **/
+
+		 const { attributes, setAttributes } = this.props;
+
+		// This code is essentially redundant to what is in PHP.
+		const button_struct = panelData.panel_buttons[0];
+		panelData.panel_buttons = [];
+
+		// testing with single button for now
+		const button_data = this.props.attributes.button;
+		const new_button = Object.assign( {}, button_struct ); // need clonedeep
+
+		new_button.c_button_href = '#' + this.getNextPanelId();
+		new_button.c_button_text = <RichText
+			value={ button_data.text }
+			onChange={ ( content ) => setAttributes( { button: { text: content, id: 'whatever', rel: 'cool' } } ) }
+		/>;
+
+		console.log( attributes );
+
+		panelData.panel_buttons.push( new_button );
+
+		// get all buttons from panel state or attributes or w/e
+		// this.props.attributes.buttons.map( ( button ) => {
+		// 	// could we import / use the larva prototype JS here somehow?
+			// let new_button = Object.assign( {}, button_struct ); // need clonedeep
+
+			// new_button.c_button_href = '#' + this.getNextPanelId();
+			// new_button.c_button_text = <RichText
+			// 		value={ button.text }
+			// 		onChange={ this.updateButtons }
+			// 	/>;
+
+			// panelData.panel_buttons.push( new_button );
+		// });
 
 		// Send markup to the pattern object
 		panelData.panel_markup = <InnerBlocks

@@ -64,14 +64,18 @@ function storytime_register_block() {
 
 		$obj['panel_markup'] = $content;
 
-		// // Set up button data and base obj
-		// $panel_button_data   = $attributes['buttons'];
-		// $panel_button_struct = $obj['panel_buttons'][0];
+		// Get a copy of the button obj
+		$panel_button_struct = $obj['panel_buttons'][0];
 
-		// // Clear the demo data
-		// $obj['panel_buttons'] = [];
+		// Clear the demo data
+		$obj['panel_buttons'] = [];
+
+		// Add the copy to the array and overwrite the data w/ real data
+		$obj['panel_buttons'][] = $panel_button_struct;
+		$obj['panel_buttons'][0]['c_button_text'] = $attributes['button']['text'];
 
 		// // Merge button data with button pattern objs
+		// // single button 4 now
 		// foreach ( $panel_button_data as $button_data ) {
 		// 	$new_panel_button = $panel_button_struct;
 		// 	$new_panel_button['c_button_text'] = $button_data['text'];

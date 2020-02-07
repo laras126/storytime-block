@@ -6,13 +6,7 @@ import save from './save';
 const name = 'panel-nested';
 
 const settings = {
-	attributes: {
-		childPanelIds: {
-			type: 'array',
-			default: []
-		},
-	},
-	title: 'Storytime Panel – Nested',
+	title: 'Storytime Panel Group',
 	edit,
 	save
 };
