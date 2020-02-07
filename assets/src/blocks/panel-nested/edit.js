@@ -16,6 +16,8 @@ class StorytimePanelNested extends Component {
 	}
 
 	render() {
+		// No buttons in the panel group
+		panelData.panel_buttons = [];
 		panelData.panel_markup = <InnerBlocks
 			allowedBlocks={ ALLOWED_BLOCKS }
 		/>;

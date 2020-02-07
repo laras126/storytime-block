@@ -56,10 +56,6 @@ class StorytimePanel extends Component {
 		super( ...arguments )
 	}
 
-	updatePanelAttributes() {
-
-	}
-
 	getNextPanelId() {
 		// Get the id of the next panel in here doi
 		return '12378462834623';
@@ -77,41 +73,39 @@ class StorytimePanel extends Component {
 		 *
 		 **/
 
-		const buttons = [
-			{
-				text: 'Button 1',
-				id: 'idyeah',
-				rel: 'whereToGo'
-			},
-			{
-				text: 'Button 2',
-				id: 'idyeah',
-				rel: 'whereToGo'
-			},
-			{
-				text: 'Button 3',
-				id: 'idyeah',
-				rel: 'whereToGo'
-			}
-		];
+		 const { attributes, setAttributes } = this.props;
 
 		// This code is essentially redundant to what is in PHP.
 		const button_struct = panelData.panel_buttons[0];
 		panelData.panel_buttons = [];
 
+		// testing with single button for now
+		const button_data = this.props.attributes.button;
+		const new_button = Object.assign( {}, button_struct ); // need clonedeep
+
+		new_button.c_button_href = '#' + this.getNextPanelId();
+		new_button.c_button_text = <RichText
+			value={ button_data.text }
+			onChange={ ( content ) => setAttributes( { button: { text: content, id: 'whatever', rel: 'cool' } } ) }
+		/>;
+
+		console.log( attributes );
+
+		panelData.panel_buttons.push( new_button );
+
 		// get all buttons from panel state or attributes or w/e
-		buttons.map( ( button ) => {
-			// could we import / use the larva prototype JS here somehow?
-			let new_button = Object.assign( {}, button_struct ); // need clonedeep
+		// this.props.attributes.buttons.map( ( button ) => {
+		// 	// could we import / use the larva prototype JS here somehow?
+			// let new_button = Object.assign( {}, button_struct ); // need clonedeep
 
-			new_button.c_button_href = '#' + this.getNextPanelId();
-			new_button.c_button_text = <RichText
-					value={ button.text }
-					onChange={ this.updatePanelAttributes }
-				/>;
+			// new_button.c_button_href = '#' + this.getNextPanelId();
+			// new_button.c_button_text = <RichText
+			// 		value={ button.text }
+			// 		onChange={ this.updateButtons }
+			// 	/>;
 
-			panelData.panel_buttons.push( new_button );
-		});
+			// panelData.panel_buttons.push( new_button );
+		// });
 
 		// Send markup to the pattern object
 		panelData.panel_markup = <InnerBlocks

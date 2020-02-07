@@ -5,7 +5,7 @@ const name = 'panel';
 
 const settings = {
 	attributes: {
-		buttons: {
+		button: {
 			type: 'object',
 			// source: 'query',
 			// selector: '.c-button',
